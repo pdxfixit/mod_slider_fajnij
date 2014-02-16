@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.0" client="site" method="upgrade">
+	<name>Fajnij Slider</name>
+	<creationDate>March 2012</creationDate>
+	<modifiedDate>March 2012</modifiedDate>
+	<author>Sergei</author>
+	<authorEmail>sergeiko_ua@yahoo.com</authorEmail>
+	<authorUrl></authorUrl>
+	<copyright>Copyright 2012 by Sergei / All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+	<version>1.0</version>
+	<description>Displays Fajnij Slider</description>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_slider_fajnij.ini</language>
+        </languages>
+	<files>
+            <filename module="mod_slider_fajnij">mod_slider_fajnij.php</filename>
+            <filename>mod_slider_fajnij.xml</filename>
+            <filename>index.html</filename>
+            <filename>helper.php</filename>
+            <filename>tmpl/default.php</filename>
+            <filename>tmpl/index.html</filename>
+	</files>
+	<config>
+            <fields name="params">
+                <fieldset name="basic">
+                    <field type="spacer" name="&lt;div style=&quot;color:#fff; font-size:12px; font-weight:bold; padding:3px; margin:0; text-align:center; background:#333333;&quot;&gt;Settings&lt;/div&gt;" />
+                    <field name="moduleclass_sfx" type="text" default="" label="PARAMMODULECLASSSUFFIXLABEL" description="PARAMMODULECLASSSUFFIXDESC" />
+                    <field name="page_title" type="text" default="" label="PARAMPAGETITLELABEL" description="PARAMPAGETITLEDESC" />                    
+                    <field name="slidewidth" type="text"  default="740" label="Slideshow Width" description="Enter width of slide show" />
+                    <field name="slideheight" type="text"  default="370" label="Slideshow Height" description="Enter height of slide show" />
+                    <field type="spacer" name="&lt;div style=&quot;color:#fff; font-size:12px; font-weight:bold; padding:3px; margin:0; text-align:center; background:#333333;&quot;&gt;Preferences&lt;/div&gt;" />
+                    <field name="transition" type="list"  default="fade" label="SlideShow Effect" description="Transition Effect">
+                        <option value="fade">Fade</option>
+                        <option value="flash">Flash</option>
+                        <option value="pulse">Pulse</option>
+                        <option value="slide">Slide</option>			
+                        <option value="fadeslide">Fadeslide</option>
+                    </field>
+                    <field name="transitionSpeed" type="text"  default="3000" label="Time Interval" description="Enter Time between each slide" />
+
+                    <field type="spacer" name="&lt;div style=&quot;color:#fff; font-size:12px; font-weight:bold; padding:3px; margin:0; text-align:center; background:#333333;&quot;&gt;Images&lt;/div&gt;" />
+                    <field type="spacer" name="&lt;div style=&quot;color:#444; height:12px; font-size:12px; font-weight:bold; padding:3px; margin:0;&quot;&gt;Image 1 &lt;/div&gt;" />
+                    <field name="img1" type="text" size="60" default="/images/fajnijslideshow/garden/photo1.jpg" label="Image Path" description="Image path URL" />
+                    <field name="thumb1" type="text" size="60" default="" label="Thumbnail Image Path" description="Thumbnail image path URL" />
+                    <field name="full1" type="text" size="60" default="" label="Full-screen Image Path" description="Full-screen image path URL" />
+                    <!--
+                    <field name="label1" type="text" size="60"   default="" label="Label" description="" />
+                    <field name="desc1" type="textarea" filter="raw" rows="7" cols="35"   default="" label="Description" description="You Can Add HTML Here" />
+                    <field name="link1" type="text" size="60"  default="" label="Image link" description="ie:http://www.google.com" />
+                    -->
+                    <!--End of image 1 parameter-->
+
+                    <field name="@spacer" type="spacer" default="" label="" description="" />
+                    <field type="spacer" name="&lt;div style=&quot;color:#444; height:12px; font-size:12px; font-weight:bold; padding:3px; margin:0;&quot;&gt;Image 2 &lt;/div&gt;" />
+                    <field name="img2" type="text" size="60" default="/images/fajnijslideshow/garden/photo2.jpg" label="Image Path" description="Image path URL" />
+                    <field name="thumb2" type="text" size="60" default="" label="Thumbnail Image Path" description="Thumbnail image path URL" />
+                    <field name="full2" type="text" size="60" default="" label="Full-screen Image Path" description="Full-screen image path URL" />
+                    <!--End of image 2 parameter-->
+
+                    <field name="@spacer" type="spacer" default="" label="" description="" />
+                    <field type="spacer" name="&lt;div style=&quot;color:#444; height:12px; font-size:12px; font-weight:bold; padding:3px; margin:0;&quot;&gt;Image 3 &lt;/div&gt;" />
+                    <field name="img3" type="text" size="60" default="/images/fajnijslideshow/garden/photo3.jpg" label="Image Path" description="Image path URL" />
+                    <field name="thumb3" type="text" size="60" default="" label="Thumbnail Image Path" description="Thumbnail image path URL" />
+                    <field name="full3" type="text" size="60" default="" label="Full-screen Image Path" description="Full-screen image path URL" />
+                    <!--End of image 3 parameter-->
+
+                    <field name="@spacer" type="spacer" default="" label="" description="" />
+                    <field type="spacer" name="&lt;div style=&quot;color:#444; height:12px; font-size:12px; font-weight:bold; padding:3px; margin:0;&quot;&gt;Image 4 &lt;/div&gt;" />
+                    <field name="img4" type="text" size="60" default="/images/fajnijslideshow/garden/photo4.jpg" label="Image Path" description="Image path URL" />
+                    <field name="thumb4" type="text" size="60" default="" label="Thumbnail Image Path" description="Thumbnail image path URL" />
+                    <field name="full4" type="text" size="60" default="" label="Full-screen Image Path" description="Full-screen image path URL" />
+                    <!--End of image 4 parameter-->
+
+                    <field name="@spacer" type="spacer" default="" label="" description="" />
+                    <field type="spacer" name="&lt;div style=&quot;color:#444; height:12px; font-size:12px; font-weight:bold; padding:3px; margin:0;&quot;&gt;Image 5 &lt;/div&gt;" />
+                    <field name="img5" type="text" size="60" default="" label="Image Path" description="Image path URL" />
+                    <field name="thumb5" type="text" size="60" default="" label="Thumbnail Image Path" description="Thumbnail image path URL" />
+                    <field name="full5" type="text" size="60" default="" label="Full-screen Image Path" description="Full-screen image path URL" />
+                    <!--End of image 5 parameter-->                        
+
+                    <field name="@spacer" type="spacer" default="" label="" description="" />
+                    <field type="spacer" name="&lt;div style=&quot;color:#444; height:12px; font-size:12px; font-weight:bold; padding:3px; margin:0;&quot;&gt;Image 6 &lt;/div&gt;" />
+                    <field name="img6" type="text" size="60" default="" label="Image Path" description="Image path URL" />
+                    <field name="thumb6" type="text" size="60" default="" label="Thumbnail Image Path" description="Thumbnail image path URL" />
+                    <field name="full6" type="text" size="60" default="" label="Full-screen Image Path" description="Full-screen image path URL" />
+                    <!--End of image 6 parameter-->
+
+                    <field name="@spacer" type="spacer" default="" label="" description="" />
+                    <field type="spacer" name="&lt;div style=&quot;color:#444; height:12px; font-size:12px; font-weight:bold; padding:3px; margin:0;&quot;&gt;Image 7 &lt;/div&gt;" />
+                    <field name="img7" type="text" size="60" default="" label="Image Path" description="Image path URL" />
+                    <field name="thumb7" type="text" size="60" default="" label="Thumbnail Image Path" description="Thumbnail image path URL" />
+                    <field name="full7" type="text" size="60" default="" label="Full-screen Image Path" description="Full-screen image path URL" />
+                    <!--End of image 7 parameter-->
+
+                    <field name="@spacer" type="spacer" default="" label="" description="" />
+                    <field type="spacer" name="&lt;div style=&quot;color:#444; height:12px; font-size:12px; font-weight:bold; padding:3px; margin:0;&quot;&gt;Image 8 &lt;/div&gt;" />
+                    <field name="img8" type="text" size="60" default="" label="Image Path" description="Image path URL" />
+                    <field name="thumb8" type="text" size="60" default="" label="Thumbnail Image Path" description="Thumbnail image path URL" />
+                    <field name="full8" type="text" size="60" default="" label="Full-screen Image Path" description="Full-screen image path URL" />
+                    <!--End of image 8 parameter-->
+
+                    <field name="@spacer" type="spacer" default="" label="" description="" />
+                    <field type="spacer" name="&lt;div style=&quot;color:#444; height:12px; font-size:12px; font-weight:bold; padding:3px; margin:0;&quot;&gt;Image 9 &lt;/div&gt;" />
+                    <field name="img9" type="text" size="60" default="" label="Image Path" description="Image path URL" />
+                    <field name="thumb9" type="text" size="60" default="" label="Thumbnail Image Path" description="Thumbnail image path URL" />
+                    <field name="full9" type="text" size="60" default="" label="Full-screen Image Path" description="Full-screen image path URL" />
+                    <!--End of image 9 parameter-->
+
+                    <field name="@spacer" type="spacer" default="" label="" description="" />
+                    <field type="spacer" name="&lt;div style=&quot;color:#444; height:12px; font-size:12px; font-weight:bold; padding:3px; margin:0;&quot;&gt;Image 10 &lt;/div&gt;" />
+                    <field name="img10" type="text" size="60" default="" label="Image Path" description="Image path URL" />
+                    <field name="thumb10" type="text" size="60" default="" label="Thumbnail Image Path" description="Thumbnail image path URL" />
+                    <field name="full10" type="text" size="60" default="" label="Full-screen Image Path" description="Full-screen image path URL" />
+                    <!--End of image 10 parameter-->
+                </fieldset>
+            </fields>
+	</config>
+</extension>
